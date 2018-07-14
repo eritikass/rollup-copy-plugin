@@ -2,7 +2,13 @@
 
 Simple rollup plugin to copy files.
 
+## Usage
+
+**NB:** This plugin only copies files once when rollup start, any later changes will not be copied (before you start rollup again).
+
 ```js
+import copyPlugin from 'rollup-copy-plugin';
+
 export default {
   // ...
   plugins: [

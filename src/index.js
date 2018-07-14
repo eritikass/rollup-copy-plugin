@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export default function alias(options = {}) {
+export default function copy(options = {}) {
   const copyFiles = () => {
     Object.keys(options).forEach((src) => {
       // eslint-disable-next-line no-console

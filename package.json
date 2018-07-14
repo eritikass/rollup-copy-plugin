@@ -1,6 +1,6 @@
 {
   "name": "rollup-copy-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/rollup-copy-plugin.cjs.js",
   "module": "dist/rollup-copy-plugin.es.js",
   "jsnext:main": "dist/rollup-plugin-json.es.js",

@@ -10,4 +10,7 @@ export default {
     { file: pkg.module, format: 'es', sourcemap: true }
   ],
   plugins: [buble()],
+  external: [
+    'fs',
+  ]
 };

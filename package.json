@@ -1,11 +1,48 @@
 {
   "name": "rollup-copy-plugin",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/rollup-copy-plugin.cjs.js",
+  "module": "dist/rollup-copy-plugin.es.js",
+  "jsnext:main": "dist/rollup-plugin-json.es.js",
+  "license": "MIT",
+  "repository": "https://github.com/eritikass/rollup-copy-plugin.git",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "mocha": "^5.1.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "source-map-support": "^0.5.5"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "test": "mocha",
+    "pretest": "npm run build",
+    "build": "rollup -c",
+    "prebuild": "rm -rf dist/*",
+    "prepublishOnly": "npm test",
+    "prepare": "npm run build",
+    "precommit": "lint-staged",
+    "postcommit": "git reset",
+    "lint": "eslint --fix src test/test.js"
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "test/test.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
